@@ -222,8 +222,12 @@ public class GlugGlugPlugin extends Plugin
 
 	private void sendChatMessage(Player player)
 	{
-		final String template = config.chatText();
-		if (template == null || template.trim().isEmpty())
+		final boolean publicChat = config.chatStyle() == GlugChatStyle.PUBLIC_CHAT;
+
+		// The public chat style says the overhead words, as if they had typed them. The game
+		// message style uses its own template, which can name the player.
+		final String body = publicChat ? config.overheadText() : config.chatText();
+		if (body == null || body.trim().isEmpty())
 		{
 			return;
 		}
@@ -240,9 +244,16 @@ public class GlugGlugPlugin extends Plugin
 		}
 		lastChatTick.put(name, tick);
 
+		if (publicChat)
+		{
+			// Renders as "Name: glub glub" in the public chat tab, the same as a typed message.
+			client.addChatMessage(ChatMessageType.PUBLICCHAT, name, body, null);
+			return;
+		}
+
 		final String message = new ChatMessageBuilder()
 			.append(ChatColorType.HIGHLIGHT)
-			.append(formatChatMessage(template, name))
+			.append(formatChatMessage(body, name))
 			.build();
 
 		chatMessageManager.queue(QueuedMessage.builder()

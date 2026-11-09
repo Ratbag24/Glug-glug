@@ -104,10 +104,25 @@ public interface GlugGlugConfig extends Config
 	}
 
 	@ConfigItem(
+		keyName = "chatStyle",
+		name = "Chat style",
+		description = "Game message prints a line from the game, using the chat text below. "
+			+ "Public chat prints \"Name: glub glub\" in your public chat tab, exactly as it "
+			+ "would look if they had typed it - the chat text below is then ignored and the "
+			+ "overhead text is used as the words.",
+		position = 12,
+		section = chatSection
+	)
+	default GlugChatStyle chatStyle()
+	{
+		return GlugChatStyle.PUBLIC_CHAT;
+	}
+
+	@ConfigItem(
 		keyName = "chatText",
 		name = "Chat text",
-		description = "The message itself. Use $name for the player's name.",
-		position = 12,
+		description = "The message itself, for the Game message style. Use $name for the player's name.",
+		position = 13,
 		section = chatSection
 	)
 	default String chatText()
@@ -121,7 +136,7 @@ public interface GlugGlugConfig extends Config
 		keyName = "chatCooldown",
 		name = "Chat cooldown",
 		description = "Minimum ticks between chat messages for the same player, so a 5-dose chug doesn't spam. 0 disables the cooldown.",
-		position = 13,
+		position = 14,
 		section = chatSection
 	)
 	default int chatCooldownTicks()
