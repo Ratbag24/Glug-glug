@@ -19,25 +19,25 @@ public class GlugGlugPluginTest
 	@Test
 	public void substitutesPlayerName()
 	{
-		assertEquals("Zezima: glug glug", GlugGlugPlugin.formatChatMessage("$name: glug glug", "Zezima"));
+		assertEquals("Zezima: glub glub", GlugGlugPlugin.formatChatMessage("$name: glub glub", "Zezima"));
 	}
 
 	@Test
 	public void leavesTemplateAloneWithoutToken()
 	{
-		assertEquals("glug glug", GlugGlugPlugin.formatChatMessage("glug glug", "Zezima"));
+		assertEquals("glub glub", GlugGlugPlugin.formatChatMessage("glub glub", "Zezima"));
 	}
 
 	@Test
 	public void substitutesEveryOccurrence()
 	{
-		assertEquals("Bob glugs, Bob", GlugGlugPlugin.formatChatMessage("$name glugs, $name", "Bob"));
+		assertEquals("Bob glubs, Bob", GlugGlugPlugin.formatChatMessage("$name glubs, $name", "Bob"));
 	}
 
 	@Test
 	public void toleratesMissingName()
 	{
-		assertEquals(": glug glug", GlugGlugPlugin.formatChatMessage("$name: glug glug", null));
+		assertEquals(": glub glub", GlugGlugPlugin.formatChatMessage("$name: glub glub", null));
 	}
 
 	@Test

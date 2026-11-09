@@ -27,9 +27,9 @@ import net.runelite.client.plugins.PluginDescriptor;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Glug Glug",
-	description = "Says \"glug glug\" in chat and above your head when you drink from the chugging barrel",
-	tags = {"glug", "chug", "chugging", "barrel", "potion", "drink", "mixology", "overhead"}
+	name = "Glub Glub",
+	description = "Says \"glub glub\" in chat and above your head when you drink from the chugging barrel",
+	tags = {"glub", "glug", "chug", "chugging", "barrel", "potion", "drink", "mixology", "overhead"}
 )
 public class GlugGlugPlugin extends Plugin
 {

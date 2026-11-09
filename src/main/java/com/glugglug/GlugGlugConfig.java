@@ -28,7 +28,7 @@ public interface GlugGlugConfig extends Config
 
 	@ConfigSection(
 		name = "What counts as a chug",
-		description = "Which drinking actions trigger the glug.",
+		description = "Which drinking actions trigger the glub.",
 		position = 20
 	)
 	String triggerSection = "triggerSection";
@@ -58,7 +58,7 @@ public interface GlugGlugConfig extends Config
 	)
 	default String overheadText()
 	{
-		return "glug glug";
+		return "glub glub";
 	}
 
 	@Range(min = 1, max = 20)
@@ -112,7 +112,7 @@ public interface GlugGlugConfig extends Config
 	)
 	default String chatText()
 	{
-		return "$name: glug glug";
+		return "$name: glub glub";
 	}
 
 	@Range(min = 0, max = 100)
@@ -136,7 +136,7 @@ public interface GlugGlugConfig extends Config
 	@ConfigItem(
 		keyName = "includeOtherPlayers",
 		name = "Include other players",
-		description = "Glug for everyone you can see, not just yourself.",
+		description = "Glub for everyone you can see, not just yourself.",
 		position = 21,
 		section = triggerSection
 	)

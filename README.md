@@ -1,7 +1,7 @@
-# Glug Glug
+# Glub Glub
 
 A [RuneLite](https://runelite.net) plugin for Old School RuneScape. When someone drinks
-from the **chugging barrel**, it says `glug glug` in your chatbox and floats `glug glug`
+from the **chugging barrel**, it says `glub glub` in your chatbox and floats `glub glub`
 above their head.
 
 ## How it works
@@ -12,14 +12,14 @@ data still uses the old name). Animations are broadcast to every nearby client, 
 can spot *anyone* chugging, not just you.
 
 The overhead text uses the same mechanism as normal public chat, so it looks exactly like a
-player saying "glug glug" out loud.
+player saying "glub glub" out loud.
 
 ## Important: everyone needs to install it
 
 RuneLite plugins run on your own client. This plugin **cannot** make text appear on your
 friends' screens — it only draws on yours.
 
-So: each friend installs it themselves. Once they have, everyone sees `glug glug` over anyone
+So: each friend installs it themselves. Once they have, everyone sees `glub glub` over anyone
 who chugs, which is as close to server-wide as a client-side plugin can get. Nothing is sent
 to other players, and players without the plugin see nothing.
 
@@ -42,13 +42,13 @@ restart RuneLite.
 | Setting | Default | What it does |
 | --- | --- | --- |
 | **Show overhead text** | on | Float the text above the drinker's head |
-| **Overhead text** | `glug glug` | What appears above their head |
+| **Overhead text** | `glub glub` | What appears above their head |
 | **Duration** | 5 ticks | How long it stays up (1 tick = 0.6s) |
 | **Don't interrupt real chat** | on | If they're already saying something, leave it alone |
 | **Show chat message** | on | Print a message in your chatbox |
-| **Chat text** | `$name: glug glug` | The message; `$name` becomes the player's name |
+| **Chat text** | `$name: glub glub` | The message; `$name` becomes the player's name |
 | **Chat cooldown** | 8 ticks | Minimum gap between messages for the same player |
-| **Include other players** | on | Glug for everyone you can see, not just yourself |
+| **Include other players** | on | Glub for everyone you can see, not just yourself |
 | **Also normal potions and food** | off | Trigger on the ordinary eat/drink animation too (noisy) |
 
 The chat cooldown matters because a barrel holds up to five potions and fires the animation
@@ -58,5 +58,5 @@ per dose — without it, one click would print five lines.
 
 - The barrel only works at a bank, so this fires at bank chests.
 - Built against RuneLite 1.13.6, Java 11 target.
-- If a real public chat message takes over someone's overhead text mid-glug, the plugin backs
+- If a real public chat message takes over someone's overhead text mid-glub, the plugin backs
   off and restores whatever was there before.
