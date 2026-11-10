@@ -11,8 +11,13 @@ the barrel was called the "pre-pot device" until it was renamed in October 2024,
 data still uses the old name). Animations are broadcast to every nearby client, so the plugin
 can spot *anyone* chugging, not just you.
 
-The overhead text uses the same mechanism as normal public chat, so it looks exactly like a
-player saying "glub glub" out loud.
+The overhead text is set through `Actor#setOverheadText`, the same field the game engine uses
+for typed public chat, so it inherits the game's font, colour, placement and fade. It is the
+public chat text, not an overlay drawn on top of the scene.
+
+Because the game gives each player a single overhead slot, the plugin cannot show its text at
+the same time as a real typed message. The **Don't interrupt real chat** setting decides which
+one wins; either way the plugin restores whatever was there before.
 
 ## Important: everyone needs to install it
 
@@ -46,7 +51,8 @@ restart RuneLite.
 | **Duration** | 5 ticks | How long it stays up (1 tick = 0.6s) |
 | **Don't interrupt real chat** | on | If they're already saying something, leave it alone |
 | **Show chat message** | on | Print a message in your chatbox |
-| **Chat text** | `$name: glub glub` | The message; `$name` becomes the player's name |
+| **Chat style** | Game message | `Game message` reads as a line from the game. `Public chat` prints `Name: glub glub` in your public chat tab, exactly as a typed message would look, and uses the overhead text as the words |
+| **Chat text** | `$name: glub glub` | The message, for the Game message style; `$name` becomes the player's name |
 | **Chat cooldown** | 8 ticks | Minimum gap between messages for the same player |
 | **Include other players** | on | Glub for everyone you can see, not just yourself |
 | **Also normal potions and food** | off | Trigger on the ordinary eat/drink animation too (noisy) |

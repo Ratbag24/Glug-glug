@@ -115,7 +115,7 @@ public interface GlugGlugConfig extends Config
 	)
 	default GlugChatStyle chatStyle()
 	{
-		return GlugChatStyle.PUBLIC_CHAT;
+		return GlugChatStyle.GAME_MESSAGE;
 	}
 
 	@ConfigItem(
