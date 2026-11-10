@@ -126,6 +126,8 @@ public class GlugGlugPlugin extends Plugin
 			return;
 		}
 
+		log.debug("chug detected for {} (animation {})", player.getName(), player.getAnimation());
+
 		if (config.showOverhead())
 		{
 			showOverhead(player);
