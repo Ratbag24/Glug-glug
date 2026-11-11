@@ -28,20 +28,6 @@ So: each friend installs it themselves. Once they have, everyone sees `glub glub
 who chugs, which is as close to server-wide as a client-side plugin can get. Nothing is sent
 to other players, and players without the plugin see nothing.
 
-## Installing
-
-Not on the Plugin Hub yet, so side-load it:
-
-```bash
-git clone https://github.com/ratbag24/glug-glug.git
-cd glug-glug
-./gradlew build
-```
-
-Then either run `GlugGlugPluginTest.main()` from your IDE to launch a client with the plugin
-loaded, or drop `build/libs/glug-glug-1.0.0.jar` into `~/.runelite/sideloaded-plugins/` and
-restart RuneLite.
-
 ## Settings
 
 | Setting | Default | What it does |
